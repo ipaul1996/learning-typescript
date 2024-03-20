@@ -1,0 +1,94 @@
+TypeScript developed and maintained by Microsoft Corporation. We can use it both in client side 
+and server side.
+TypeScript is built on top of JavaScript. So, every JavaScript file is a valid TypeScript file.
+TypedScript is JavaScript with type checking. It is a superset of JavaScript.
+TypeScript is a Statically typed language.
+Here TypeScript compiler checks a lot of bugs.
+If a variable is declared as a type of number then we can't assign a string to it.
+
+       compiler
+     (Transpilation)
+         tsc
+.ts ------------------> .js
+
+
+TypeScript Installation:
+npm install -g typescript ---> Globally install typescript in the machine
+npm install --save-dev(or -D) typescript ---> Install typescript as a dev dependency, will only be available during 
+development, not at the runtime. (Most common practise)
+npm install typescript ---> Install typescript as a regular dependency, will be available at the runtime
+
+
+Checking TypeScript Version:
+tsc -v
+Version 5.3.3
+
+
+Configure the TypeScript Compiler:
+tsc -init
+
+tsconfig.json will be generated.
+Inside tsconfig.json make the following changes:
+"target": "ES2016",
+"module": "commonjs",                           
+"rootDir": "./src",
+"outDir": "./dist",                                  
+"removeComments": true,
+"noEmitOnError": true,
+"strict": true,
+"noUnusedLocals": true,
+"noUnusedParameters": true,
+"noImplicitReturns": true,
+
+If we compile with,
+tsc
+all the files inside src will be compiled and corresponding JavaScript files will be generated.
+inside dist folder.
+
+To compile index.ts,
+tsc index.ts
+
+tsc index.ts --watch
+when you run the above command, it means that you want to compile the "index.ts" file 
+using the TypeScript compiler, and you want the compiler to continuously watch for changes 
+in the file and recompile it automatically whenever there is a change.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Types in JS: number, string, boolean, null, undefined, Symbol, object
+Types in TypeScript: number, string, boolean, null, undefined, Symbol, object, tuple, enum, any, never, unknown, void
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In TypeScript, the include property in the tsconfig.json file is used to specify an array 
+of file or directory names that the TypeScript compiler should include when compiling your 
+TypeScript project. It defines the scope of files to be considered for compilation.
+
+"include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+]
+
+"src/**/*.ts" includes all TypeScript files (*.ts) in the src directory and its subdirectories.
+"test/**/*.ts" includes all TypeScript files in the test directory and its subdirectories.
+By default, TypeScript includes files with the .ts, .d.ts(declration files --> used to provide type information 
+for JavaScript code), and .tsx extensions.
+
+
+The files property in the tsconfig.json file is used to explicitly list a set of TypeScript 
+files that should be included in the compilation process. Unlike the include property, 
+which allows you to specify patterns to match files, the files property allows you to 
+provide a precise list of files to be compiled. Paths specified in include are relative 
+to the location of the tsconfig.json file.
+
+"files": [
+    "src/main.ts",
+    "src/utils.ts",
+    "test/test1.ts",
+    "test/test2.ts"
+]
+
+If the files property is specified, it takes precedence over the include and exclude 
+properties. Only the files listed in the files array will be included in the compilation.
+File paths specified in the files array should be relative paths from the location of the tsconfig.json file.
+Full paths are allowed, but it's generally more maintainable to use relative paths.
+
