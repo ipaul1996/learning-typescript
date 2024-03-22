@@ -1,6 +1,6 @@
 "use strict";
 let sales = 123456789;
-let course = 'TypeScript';
+let course = "TypeScript";
 let is_published = false;
 let dax = "Hello";
 let userId;
@@ -17,14 +17,14 @@ console.log(fullName);
 console.log(fullName.split(" "));
 let level;
 level = 1;
-level = 'a';
+level = "a";
 let userName;
 userName = "IP";
 userName = 121;
 userName = true;
 userName = [10, 20];
 let numbers = [1, 2, 3, 4, 5];
-numbers.forEach(number => console.log(number * number));
+numbers.forEach((number) => console.log(number * number));
 let userNames;
 userNames = ["Indrajit", "Amit", "Kaju"];
 let multipleTypes;
@@ -40,8 +40,8 @@ console.log(myUser5);
 let myUser6;
 let a;
 let b = null;
-console.log(typeof (a));
-console.log(typeof (b));
+console.log(typeof a);
+console.log(typeof b);
 function display() {
     console.log("Hi! I am displaying");
 }

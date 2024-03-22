@@ -1,7 +1,7 @@
 TypeScript developed and maintained by Microsoft Corporation. We can use it both in client side 
 and server side.
 TypeScript is built on top of JavaScript. So, every JavaScript file is a valid TypeScript file.
-TypedScript is JavaScript with type checking. It is a superset of JavaScript.
+TypeScript is JavaScript with type checking. It is a superset of JavaScript.
 TypeScript is a Statically typed language.
 Here TypeScript compiler checks a lot of bugs.
 If a variable is declared as a type of number then we can't assign a string to it.
@@ -42,8 +42,8 @@ Inside tsconfig.json make the following changes:
 
 If we compile with,
 tsc
-all the files inside src will be compiled and corresponding JavaScript files will be generated.
-inside dist folder.
+all the files inside src will be compiled and corresponding JavaScript files will be generated
+inside the dist folder.
 
 To compile index.ts,
 tsc index.ts
