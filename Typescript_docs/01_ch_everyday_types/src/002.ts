@@ -18,7 +18,9 @@ async function getFavouritNumber(): Promise<number> {
 
 const names = ["Alice", "Bob", "Eve"];
 
-// Contextual Typing - here typescript knows that name is of type string
+// Contextual Typing - It refers to the compiler's ability to infer the types of expressions based on 
+// their surrounding context.
+// here typescript knows that name is of type string
 names.forEach(function (name) {
   console.log(name.toUpperCase());
 });

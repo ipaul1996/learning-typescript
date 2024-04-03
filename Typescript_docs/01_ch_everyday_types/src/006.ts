@@ -2,6 +2,7 @@
 // In TypeScript, an interface declaration is a way to define the shape or
 // structure of an object like type aliases. It specifies a contract that a class or object
 // must adhere to by defining properties, methods, and their types.
+// In many cases, it works similar to that of type aliases.
 
 interface MyPoint {
   x: number;
@@ -15,7 +16,7 @@ function printCoordV2(pt: MyPoint) {
 
 printCoordV2({ x: 6, y: -5 });
 
-// An interface can be re-opened and new values added.
+// An interface can be re-opened and new values added. (Not in case of type aliases)
 interface Mammal {
   genus: string;
 }
@@ -35,6 +36,7 @@ interface Person {
   age?: number;
   greet: () => void;
 }
+// readonly properties can not be modified
 
 // Use the Person interface
 function introduce(person: Person) {

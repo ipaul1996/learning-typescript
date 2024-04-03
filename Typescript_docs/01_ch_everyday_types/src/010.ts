@@ -35,3 +35,7 @@ const reqObjV3 = { url: "https://example.com", method: "GET" } as const;
 // This means that url cannot be changed to another string value like "https://anotherurl.com",
 // and method cannot be changed to another string value like "POST".
 makeApiCall(reqObjV3.url, reqObjV3.method);
+
+// There is another way, 
+const reqObjV4: {url: string, method: "GET" | "POST"} = { url: "https://example.com", method: "GET" } as const;
+makeApiCall(reqObjV4.url, reqObjV4.method);

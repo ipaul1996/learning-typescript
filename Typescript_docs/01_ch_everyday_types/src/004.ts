@@ -1,6 +1,7 @@
 // Union Type - a type that is formed by combining two or more other types
 // representing values that may be one of those types. Each of these types is
 // an union's member.
+// | --> Pipe Operator
 
 function printId(id: number | string) {
   console.log("Your ID is: " + id);
@@ -29,17 +30,17 @@ type inference.
 
 function printIdV3(id: number | string) {
   if (typeof id === "number") {
-    console.log("Your ID is: " + id);
+    console.log("Your ID is: " + id); // (parameter) id: number
   } else {
-    console.log("Your ID is: " + id.toUpperCase());
+    console.log("Your ID is: " + id.toUpperCase()); // (parameter) id: string
   }
 }
 // Here the typeof operator is used for conditional checks to narrow down the type of the id variable.
 
 function welcomePeople(x: string[] | string) {
   if (Array.isArray(x)) {
-    console.log("Hello, " + x.join(" and "));
+    console.log("Hello, " + x.join(" and ")); // (parameter) x: string[]
   } else {
-    console.log("Welcome to our home " + x);
+    console.log("Welcome to our home " + x); // (parameter) x: string
   }
 }

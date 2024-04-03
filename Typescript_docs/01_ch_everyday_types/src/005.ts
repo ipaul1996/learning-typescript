@@ -38,6 +38,10 @@ type Animal = {
 type Bear = Animal & {
   honey: boolean;
 };
+// & -->  Intersection operator combines multiple types into a single type 
+// called Intersection Type, intersecting their properties. 
+// This allows the resulting type to have all properties 
+// and methods from each of the constituent types.
 
 // Create an object of type Bear
 const grizzlyBear: Bear = {
