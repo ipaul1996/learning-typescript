@@ -19,7 +19,7 @@ const s = firstElement(["a", "b", "c"]); // const s: string | undefined
 const n = firstElement([1, 2, 3]); // const n: number | undefined
 // u is of type undefined
 const u = firstElement([]); // const u: undefined
-// Here for all the above cases, the type was inferred - chosen automatically - by TypeScript.
+// Here for all the above cases, the type was inferred - chosen automatically - by TypeScript compiler.
 
 //****************************************************************** */
 

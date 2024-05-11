@@ -1,4 +1,1 @@
-// Construct Signature
-
-
-
+// Construct signature - doubt

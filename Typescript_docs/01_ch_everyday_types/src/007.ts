@@ -15,8 +15,16 @@ let inputValue: string = (inputElement as HTMLInputElement).value;
 
 console.log(inputValue);
 
+function getResult(num: number): number | string {
+  if (num > 5) {
+    return "Hello World";
+  } else {
+    return num;
+  }
+}
+
 // Define a variable with a union type
-let someValue: string | number = "this is a string";
+let someValue: string | number = getResult(6);
 
 // Assert that someValue is of type string
 let strLength: number = (someValue as string).length;

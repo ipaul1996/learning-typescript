@@ -1,6 +1,6 @@
-// The in operator narrowing
+// The "in" operator narrowing
 // JavaScript has an operator for determining if an object or its prototype chain has
-// a property with a name: the in operator. TypeScript takes this into account as a way
+// a property with a name: the "in" operator. TypeScript takes this into account as a way
 // to narrow down potential types.
 
 type Fish = { swim: () => void };
@@ -8,9 +8,11 @@ type Bird = { fly: () => void };
 
 function move(animal: Fish | Bird) {
   if ("swim" in animal) {
+    // TypeScript narrows down animal to Fish because it has 'swim' property
     return animal.swim(); // (parameter) animal: Fish
   }
 
+  // TypeScript knows if 'swim' is not in animal, it must be a Bird
   return animal.fly(); // (parameter) animal: Bird
 }
 

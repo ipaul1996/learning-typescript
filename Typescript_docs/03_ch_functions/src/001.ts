@@ -1,5 +1,5 @@
 // function type expression
-// In TypeScript, a function type expression is a way to describe the type of
+// In TypeScript, a `function type expression` is a way to describe the type of
 // a function. TypeScript allows us to treat functions as first-class citizens,
 // meaning we can pass functions as arguments to other functions, return them
 // from functions, and store them in variables. Function type expressions are used
@@ -8,7 +8,7 @@
 function greeter(fn: (a: string) => void) {
   fn("Hello, World");
 }
-// Here (a: string) => void is function type expression and it  means “a function with
+// Here (a: string) => void is `function type expression` and it  means “a function with
 // one parameter, named a, of type string, that doesn’t have a return value”.
 
 function printToConsole(s: string) {

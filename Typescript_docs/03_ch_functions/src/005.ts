@@ -1,34 +1,5 @@
 // Constraints in Generics
-
-// Let us understand subtype of an object type,
-interface Person {
-  name: string;
-  age: number;
-}
-
-interface Student {
-  name: string;
-  age: number;
-  studentID: string;
-}
-
-// Here Student is a subtype of Person and Person is supertype of Student.
-// This is because every instance of Student will
-// have all the properties of Person (name and age) in addition to its own
-// properties (studentID). So, a Student object can be treated as a Person object,
-// but not vice versa.
-
-function printPersonName(p: Person) {
-  console.log(p.name);
-}
-
-let s1: Student = {
-  name: "IP",
-  age: 27,
-  studentID: "123",
-};
-
-printPersonName(s1);
+// We use a constraint to limit the kinds of types that a type parameter can accept.
 
 function longest<Type extends { length: number }>(a: Type, b: Type) {
   if (a.length >= b.length) {
@@ -39,9 +10,10 @@ function longest<Type extends { length: number }>(a: Type, b: Type) {
 }
 
 // <Type extends { length: number }>: This syntax declares a generic type parameter Type,
-// which is constrained to be a subtype of an object type that has a length property of
-// type number. This constraint ensures that any argument passed to longest must have
-// a length property, allowing the function to compare the lengths of the two arguments.
+// which is constrained to an object type that has a length property of type number. 
+// Thus, we were allowed to access the .length property of the a and b parameters. 
+// Without the type constraint, we wouldn’t be able to access those properties because 
+// the values might have been some other type without a length property.
 
 const longerArray = longest([1, 2], [1, 2, 3]); // const longerArray: number[]
 // In this case, both arguments are arrays, and arrays have a length property.
@@ -51,16 +23,6 @@ const longerString = longest("alice", "bob"); // const longerString: "alice" | "
 
 // Error! Numbers don't have a 'length' property
 // const notOK = longest(10, 100);
-
-function longestV2(a: string, b: string) {
-  if (a.length >= b.length) {
-    return a;
-  } else {
-    return b;
-  }
-}
-
-const longerStringV2 = longestV2("alice", "bob"); // const longerStringV2: string
 
 
 // One common mistake that we do is,
@@ -77,9 +39,8 @@ Error: Type '{ length: number; }' is not assignable to type 'Type'.
 '{ length: number; }' is assignable to the constraint of type 'Type', but 'Type' 
 could be instantiated with a different subtype of constraint '{ length: number; }'.ts(2322)
 -->
-It means, TypeScript cannot guarantee that Type will always be the exact same subtype 
-as { length: number; }. In other words, Type could potentially be a more specific subtype 
-that includes additional properties beyond just length.
+It means, the function promises to return the same kind of object as was passed in, not just 
+some object matching the constraint.
 
 We can do the following to make typescript believe that Type has no additional properties
 other than length,

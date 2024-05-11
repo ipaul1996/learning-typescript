@@ -7,7 +7,7 @@
 // Example: 1
 type DescribableFunction = {
   description: string;
-  (someArg: number): boolean; // call signature - the syntax is slightly different compared to a
+  (someArg: number): boolean; // `call signature` - the syntax is slightly different compared to a
   // function type expression - use : between the parameter list and
   // the return type rather than =>.
 };

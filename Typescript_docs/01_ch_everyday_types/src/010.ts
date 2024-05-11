@@ -13,7 +13,6 @@ specialObj.counter = 1;
 // can do the following:
 const specialObjV1 = { counter: 0 } as const;
 
-
 function makeApiCall(url: string, method: "GET" | "POST") {
   console.log(`Calling api with url: ${url} and method: ${method}`);
 }
@@ -36,6 +35,9 @@ const reqObjV3 = { url: "https://example.com", method: "GET" } as const;
 // and method cannot be changed to another string value like "POST".
 makeApiCall(reqObjV3.url, reqObjV3.method);
 
-// There is another way, 
-const reqObjV4: {url: string, method: "GET" | "POST"} = { url: "https://example.com", method: "GET" } as const;
+// There is another way,
+const reqObjV4: { url: string; method: "GET" | "POST" } = {
+  url: "https://example.com",
+  method: "GET",
+};
 makeApiCall(reqObjV4.url, reqObjV4.method);
